@@ -1,0 +1,47 @@
+/* Main background for the Devotions placeholder page. */
+.devotion-page
+{
+    min-height: calc(100vh - 70px);
+
+    background-image:
+        linear-gradient(
+            rgba(44, 28, 18, 0.50),
+            rgba(44, 28, 18, 0.50)
+        ),
+        url('/images/Gods-Will-Equals-the-Holy-Spirit.webp');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+
+    padding-left: 70px;
+}
+
+/* Text area displayed over the Devotions background image. */
+.devotion-content
+{
+    max-width: 550px;
+
+    color: #FFF7E6;
+
+    text-shadow:
+        2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+/* Devotions page title. */
+.devotion-content h2
+{
+    color: #F7E7C6;
+
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+/* Devotions page message. */
+.devotion-content p
+{
+    font-size: 1.3rem;
+}

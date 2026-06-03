@@ -1,0 +1,38 @@
+/* Main application background. */
+body
+{
+    background-color: #F3E7D7;
+}
+
+/* Navigation bar styling matched to the crown image. */
+.custom-navbar
+{
+    background-color: #2C1C12 !important;
+    border-bottom: 2px solid #A66A2A;
+}
+
+/* Application title in the navbar. */
+.custom-navbar .navbar-brand
+{
+    color: #F7E7C6 !important;
+    font-weight: bold;
+    margin-right: 25px;
+}
+
+/* Navigation links. */
+.custom-navbar .nav-link
+{
+    color: #FFF7E6 !important;
+}
+
+/* Navigation link hover color. */
+.custom-navbar .nav-link:hover
+{
+    color: #FFD27D !important;
+}
+
+/* Adds spacing between navigation items. */
+.custom-navbar .nav-item
+{
+    margin-right: 12px;
+}

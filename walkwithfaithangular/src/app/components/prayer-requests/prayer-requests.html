@@ -1,0 +1,71 @@
+<div class="prayer-list-page">
+
+    <div class="page-card">
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+
+            <h2>Prayer Requests</h2>
+
+            <a
+                class="btn btn-success"
+                routerLink="/prayers/new">
+                Add Prayer Request
+            </a>
+
+        </div>
+
+        <table class="table table-bordered table-striped">
+
+            <thead class="table-warm">
+
+                <tr>
+                    <th>Title</th>
+                    <th>Category</th>
+                    <th>Answered</th>
+                    <th>Date Added</th>
+                    <th>Actions</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr *ngFor="let prayer of prayerRequests">
+
+                    <td>{{ prayer.PrayerTitle }}</td>
+
+                    <td>{{ prayer.PrayerCategory }}</td>
+
+                    <td>{{ prayer.IsAnswered === 1 ? 'Yes' : 'No' }}</td>
+
+                    <td>{{ prayer.DateAdded }}</td>
+
+                    <td>
+                        <a
+                            class="btn btn-sm btn-primary me-2"
+                            [routerLink]="['/prayers', prayer.PrayerID]">
+                            View
+                        </a>
+
+                        <a
+                            class="btn btn-sm btn-warning me-2"
+                            [routerLink]="['/prayers/edit', prayer.PrayerID]">
+                            Edit
+                        </a>
+
+                        <button
+                            class="btn btn-sm btn-danger"
+                            (click)="deletePrayerRequest(prayer.PrayerID)">
+                            Delete
+                        </button>
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

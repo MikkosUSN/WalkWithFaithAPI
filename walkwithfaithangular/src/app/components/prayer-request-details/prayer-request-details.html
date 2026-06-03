@@ -1,0 +1,54 @@
+<div class="container mt-4">
+
+    <h2 class="mb-4">
+        Prayer Request Details
+    </h2>
+
+    <div *ngIf="prayerRequest">
+
+        <div class="card">
+
+            <div class="card-body">
+
+                <h4 class="card-title">
+                    {{ prayerRequest.PrayerTitle }}
+                </h4>
+
+                <hr>
+
+                <p>
+                    <strong>Category:</strong>
+                    {{ prayerRequest.PrayerCategory }}
+                </p>
+
+                <p>
+                    <strong>Prayer Text:</strong>
+                </p>
+
+                <p>
+                    {{ prayerRequest.PrayerText }}
+                </p>
+
+                <p>
+                    <strong>Answered:</strong>
+                    {{ prayerRequest.IsAnswered === 1 ? 'Yes' : 'No' }}
+                </p>
+
+                <p>
+                    <strong>Date Added:</strong>
+                    {{ prayerRequest.DateAdded }}
+                </p>
+
+                <a
+                    class="btn btn-secondary"
+                    routerLink="/prayers">
+                    Back to Prayer Requests
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

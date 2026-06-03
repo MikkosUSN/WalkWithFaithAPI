@@ -1,0 +1,88 @@
+<div class="container mt-4">
+
+    <h2 class="mb-4">
+        {{ isEditMode ? 'Edit Prayer Request' : 'Add Prayer Request' }}
+    </h2>
+
+    <form (ngSubmit)="savePrayerRequest()">
+
+        <div class="mb-3">
+
+            <label class="form-label">
+                Prayer Title
+            </label>
+
+            <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="prayerRequest.PrayerTitle"
+                name="PrayerTitle"
+                required>
+
+        </div>
+
+        <div class="mb-3">
+
+            <label class="form-label">
+                Prayer Text
+            </label>
+
+            <textarea
+                class="form-control"
+                rows="4"
+                [(ngModel)]="prayerRequest.PrayerText"
+                name="PrayerText"
+                required>
+            </textarea>
+
+        </div>
+
+        <div class="mb-3">
+
+            <label class="form-label">
+                Category
+            </label>
+
+            <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="prayerRequest.PrayerCategory"
+                name="PrayerCategory"
+                required>
+
+        </div>
+
+        <div class="mb-3">
+
+            <label class="form-label">
+                Answered
+            </label>
+
+            <select
+                class="form-control"
+                [(ngModel)]="prayerRequest.IsAnswered"
+                name="IsAnswered">
+
+                <option [ngValue]="0">No</option>
+
+                <option [ngValue]="1">Yes</option>
+
+            </select>
+
+        </div>
+
+        <button
+            type="submit"
+            class="btn btn-success">
+            {{ isEditMode ? 'Update Prayer Request' : 'Save Prayer Request' }}
+        </button>
+
+        <a
+            class="btn btn-secondary ms-2"
+            routerLink="/prayers">
+            Cancel
+        </a>
+
+    </form>
+
+</div>

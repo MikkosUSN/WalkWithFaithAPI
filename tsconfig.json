@@ -7,5 +7,10 @@
     "strict": false,
     "esModuleInterop": true,
     "skipLibCheck": true
-  }
+  },
+    "exclude": [
+    "node_modules",
+    "dist",
+    "walkwithfaithangular"
+  ]
 }
