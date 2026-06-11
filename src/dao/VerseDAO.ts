@@ -9,6 +9,64 @@ export const getAllVerses = (callback: any) =>
     connection.query(sql, callback);
 };
 
+// Get all Bible book names.
+export const getBooks = (callback: any) =>
+{
+    const sql =
+    `
+        SELECT DISTINCT BookName
+        FROM BibleVerse
+        ORDER BY BookName
+    `;
+
+    connection.query(sql, callback);
+};
+
+// Get verses by book and Bible version.
+export const getVersesByBook =
+(
+    bookName: string,
+    version: string,
+    callback: any
+) =>
+{
+    const sql =
+    `
+        SELECT *
+        FROM BibleVerse
+        WHERE BookName = ?
+        AND BibleVersion = ?
+        ORDER BY ChapterNumber, VerseNumber
+    `;
+
+    connection.query
+    (
+        sql,
+        [
+            bookName,
+            version
+        ],
+        callback
+    );
+};
+
+// Get one Bible verse from the database.
+export const getVerseById =
+(
+    id: number,
+    callback: any
+) =>
+{
+    const sql =
+    `
+        SELECT *
+        FROM BibleVerse
+        WHERE VerseID = ?
+    `;
+
+    connection.query(sql, [id], callback);
+};
+
 // Add a new Bible verse into the database.
 export const createVerse = (verse: Verse, callback: any) =>
 {

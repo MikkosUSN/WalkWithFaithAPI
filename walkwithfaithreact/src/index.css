@@ -1,0 +1,124 @@
+/* Global theme colors for the React application. */
+:root
+{
+    --text: #2C1C12;
+    --text-h: #2C1C12;
+    --bg: #F3E7D7;
+    --border: #A66A2A;
+    --code-bg: #FFF7E6;
+    --accent: #A66A2A;
+    --accent-bg: #FFF7E6;
+    --accent-border: #A66A2A;
+    --social-bg: #FFF7E6;
+    --shadow:
+        rgba(44, 28, 18, 0.12) 0 10px 15px -3px,
+        rgba(44, 28, 18, 0.08) 0 4px 6px -2px;
+
+    --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+    --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+    --mono: ui-monospace, Consolas, monospace;
+
+    font: 18px/145% var(--sans);
+    letter-spacing: 0.18px;
+    color: var(--text);
+    background: var(--bg);
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Adjusts the base font size on smaller screens. */
+@media (max-width: 1024px)
+{
+    :root
+    {
+        font-size: 16px;
+    }
+}
+
+/* Keeps the React app full height without the default Vite border layout. */
+#root
+{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+/* Removes default browser spacing and applies the main background color. */
+body
+{
+    margin: 0;
+    background-color: var(--bg);
+}
+
+/* Main heading styles. */
+h1,
+h2
+{
+    font-family: var(--heading);
+    font-weight: 600;
+    color: var(--text-h);
+}
+
+/* Large page heading. */
+h1
+{
+    font-size: 56px;
+    letter-spacing: -1.68px;
+    margin: 32px 0;
+}
+
+/* Adjusts large headings on smaller screens. */
+@media (max-width: 1024px)
+{
+    h1
+    {
+        font-size: 36px;
+        margin: 20px 0;
+    }
+}
+
+/* Section heading. */
+h2
+{
+    font-size: 24px;
+    line-height: 118%;
+    letter-spacing: -0.24px;
+    margin: 0 0 16px;
+}
+
+/* Adjusts section headings on smaller screens. */
+@media (max-width: 1024px)
+{
+    h2
+    {
+        font-size: 20px;
+    }
+}
+
+/* Keeps paragraph spacing clean inside cards and pages. */
+p
+{
+    margin: 0 0 10px;
+}
+
+/* Code-style text. */
+code,
+.counter
+{
+    font-family: var(--mono);
+    display: inline-flex;
+    border-radius: 4px;
+    color: var(--text-h);
+}
+
+/* Inline code styling. */
+code
+{
+    font-size: 15px;
+    line-height: 135%;
+    padding: 4px 8px;
+    background: var(--code-bg);
+}

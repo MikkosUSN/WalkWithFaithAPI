@@ -3,6 +3,9 @@ import { Request, Response } from "express";
 import
 {
     getAllVerses,
+    getBooks,
+    getVersesByBook,
+    getVerseById,
     createVerse,
     updateVerse,
     deleteVerse
@@ -21,6 +24,64 @@ export const getVerses = (req: Request, res: Response) =>
         else
         {
             res.json(results);
+        }
+    });
+};
+
+// Return all Bible book names.
+export const getBibleBooks = (req: Request, res: Response) =>
+{
+    getBooks((error: any, results: any) =>
+    {
+        if (error)
+        {
+            res.status(500).send(error);
+        }
+        else
+        {
+            res.json(results);
+        }
+    });
+};
+
+// Return Bible verses by book and version.
+export const getBibleVersesByBook = (req: Request, res: Response) =>
+{
+    const bookName = req.params.bookName;
+    const version = req.params.version;
+
+    getVersesByBook
+    (
+        bookName,
+        version,
+        (error: any, results: any) =>
+        {
+            if (error)
+            {
+                res.status(500).send(error);
+            }
+            else
+            {
+                res.json(results);
+            }
+        }
+    );
+};
+
+// Return one Bible verse.
+export const getBibleVerse = (req: Request, res: Response) =>
+{
+    const id = Number(req.params.id);
+
+    getVerseById(id, (error: any, results: any) =>
+    {
+        if (error)
+        {
+            res.status(500).send(error);
+        }
+        else
+        {
+            res.json(results[0]);
         }
     });
 };

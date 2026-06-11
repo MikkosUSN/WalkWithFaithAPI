@@ -6,6 +6,7 @@ import connection from "./config/db";
 import prayerRoutes from "./routes/PrayerRequestRoutes";
 import devotionRoutes from "./routes/DevotionRoutes";
 import verseRoutes from "./routes/VerseRoutes";
+import savedVerseRoutes from "./routes/SavedVerseRoutes";
 
 // Load the settings from the .env file.
 dotenv.config();
@@ -27,6 +28,9 @@ app.use("/api/devotions", devotionRoutes);
 
 // Use the Bible verse API routes.
 app.use("/api/verses", verseRoutes);
+
+// Use the saved verse API routes.
+app.use("/api/saved-verses", savedVerseRoutes);
 
 // Simple test route to make sure the API is running.
 app.get("/", (req, res) => {

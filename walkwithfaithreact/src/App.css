@@ -1,0 +1,87 @@
+/* Main application background. */
+body
+{
+    background-color: #F3E7D7;
+}
+
+/* Keeps page content aligned like the Angular application. */
+.container
+{
+    text-align: left;
+}
+
+/* Page headings. */
+h2
+{
+    color: #2C1C12;
+    font-weight: 600;
+}
+
+/* Navigation bar styling matched to the Angular theme. */
+.custom-navbar
+{
+    background-color: #2C1C12 !important;
+    border-bottom: 2px solid #A66A2A;
+}
+
+/* Application title in the navbar. */
+.custom-navbar .navbar-brand
+{
+    color: #F7E7C6 !important;
+    font-weight: bold;
+    margin-right: 25px;
+}
+
+/* Navigation links. */
+.custom-navbar .nav-link
+{
+    color: #FFF7E6 !important;
+    margin-right: 12px;
+}
+
+/* Navigation link hover color. */
+.custom-navbar .nav-link:hover
+{
+    color: #FFD27D !important;
+}
+
+/* Scripture and saved verse cards. */
+.card
+{
+    border: 1px solid #A66A2A;
+    background-color: #FFF7E6;
+}
+
+/* Table header styling. */
+.table thead th
+{
+    background-color: #2C1C12;
+    color: #F7E7C6;
+}
+
+/* Table body styling. */
+.table
+{
+    background-color: #FFFDF8;
+}
+
+/* Form labels. */
+.form-label
+{
+    color: #2C1C12;
+    font-weight: 500;
+}
+
+/* Primary button styling. */
+.btn-primary
+{
+    background-color: #2C1C12;
+    border-color: #2C1C12;
+}
+
+/* Primary button hover styling. */
+.btn-primary:hover
+{
+    background-color: #A66A2A;
+    border-color: #A66A2A;
+}
