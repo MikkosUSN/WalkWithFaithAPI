@@ -3,6 +3,7 @@ import express from "express";
 import
 {
     getVerses,
+    getVerseOfTheDay,
     getBibleBooks,
     getBibleVersesByBook,
     getBibleVerse,
@@ -16,6 +17,9 @@ const router = express.Router();
 
 // Get all Bible verses.
 router.get("/", getVerses);
+
+// Get one random Bible verse for the Verse of the Day feature.
+router.get("/verse-of-the-day", getVerseOfTheDay);
 
 // Get all Bible book names.
 router.get("/books", getBibleBooks);

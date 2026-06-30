@@ -3,18 +3,22 @@ import express from "express";
 import
 {
     getDevotions,
+    getDevotion,
     addDevotion,
     editDevotion,
     removeDevotion
-}
-from "../controllers/DevotionController";
+} from "../controllers/DevotionController";
 
+// Create the router.
 const router = express.Router();
 
 // Get all devotion entries.
 router.get("/", getDevotions);
 
-// Create a new devotion entry.
+// Get one devotion entry by ID.
+router.get("/:id", getDevotion);
+
+// Add a new devotion entry.
 router.post("/", addDevotion);
 
 // Update an existing devotion entry.

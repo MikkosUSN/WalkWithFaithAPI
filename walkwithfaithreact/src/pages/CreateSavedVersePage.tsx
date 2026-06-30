@@ -89,7 +89,7 @@ function CreateSavedVersePage()
             {
                 verse &&
                 (
-                    <div className="card mb-4">
+                    <div className="card mb-4 border-warning-subtle">
 
                         <div className="card-body">
 
@@ -107,7 +107,7 @@ function CreateSavedVersePage()
                 )
             }
 
-            <div className="card">
+            <div className="card border-warning-subtle">
 
                 <div className="card-body">
 
@@ -161,6 +161,7 @@ function CreateSavedVersePage()
 
                             <textarea
                                 className="form-control"
+                                rows={4}
                                 value={personalReflection}
                                 onChange={(e) => setPersonalReflection(e.target.value)}
                             />
@@ -197,18 +198,27 @@ function CreateSavedVersePage()
 
                         </div>
 
-                        <div className="d-flex gap-2">
+                        <div className="d-flex align-items-center gap-2">
 
                             <button
                                 type="submit"
-                                className="btn btn-primary"
+                                className="btn-brown"
                             >
                                 Save Verse
                             </button>
 
                             <Link
                                 className="btn btn-secondary"
-                                to="/bible-verses"
+                                style={{
+                                    height: "50px",
+                                    minWidth: "90px",
+                                    paddingLeft: "18px",
+                                    paddingRight: "18px",
+                                    display: "inline-flex",
+                                    alignItems: "center",
+                                    justifyContent: "center"
+                                }}
+                                to="/saved-verses"
                             >
                                 Back
                             </Link>

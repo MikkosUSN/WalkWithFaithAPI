@@ -89,7 +89,7 @@ function BibleVersePage()
                 Bible Verses
             </h2>
 
-            <div className="card mb-4">
+            <div className="card mb-4 border-warning-subtle">
 
                 <div className="card-body">
 
@@ -145,7 +145,7 @@ function BibleVersePage()
                         <div className="col-md-4 mb-3 d-flex align-items-end">
 
                             <button
-                                className="btn btn-primary w-100"
+                                className="btn btn-brown w-100"
                                 onClick={loadVerses}
                             >
                                 Find Verses
@@ -161,7 +161,7 @@ function BibleVersePage()
 
             <table className="table table-bordered table-striped align-middle">
 
-                <thead>
+                <thead className="table-dark">
 
                     <tr>
                         <th>Book</th>

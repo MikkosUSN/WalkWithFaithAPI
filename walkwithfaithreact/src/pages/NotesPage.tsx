@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import notesImage from "../assets/Old Bible Scrolls.jpg";
 
 function NotesPage()
@@ -69,12 +70,45 @@ function NotesPage()
 
                 <p
                     style={{
-                        fontSize: "18px"
+                        fontSize: "18px",
+                        marginBottom: "28px"
                     }}
                 >
                     A quiet note can become a reminder of God&apos;s faithfulness,
                     direction, and grace in the middle of everyday life.
                 </p>
+
+                <p
+                    style={{
+                        fontSize: "17px",
+                        lineHeight: "1.7",
+                        marginBottom: "35px",
+                        maxWidth: "620px"
+                    }}
+                >
+                    Capture the lessons, prayers, and scriptures that God places
+                    on your heart. Your personal notes become a journal of your
+                    faith journey, allowing you to reflect on where God has
+                    guided you and how He continues to work in your life each day.
+                </p>
+
+                <Link
+                    to="/notes/list"
+                    style={{
+                        display: "inline-block",
+                        backgroundColor: "#2b170f",
+                        color: "#fff3d6",
+                        textDecoration: "none",
+                        padding: "12px 26px",
+                        borderRadius: "6px",
+                        border: "2px solid #c47a20",
+                        fontWeight: "bold",
+                        fontSize: "16px",
+                        letterSpacing: "0.5px"
+                    }}
+                >
+                    View My Personal Notes
+                </Link>
 
             </div>
 

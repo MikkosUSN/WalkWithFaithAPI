@@ -1,87 +1,120 @@
-/* Main application background. */
-body
-{
-    background-color: #F3E7D7;
+body {
+    margin: 0;
+    background-color: #f3e6d3;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Keeps page content aligned like the Angular application. */
-.container
-{
-    text-align: left;
+/* Navbar */
+.navbar {
+    background-color: #2b170f !important;
+    border-bottom: 2px solid #c47a20;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+    min-height: 58px;
 }
 
-/* Page headings. */
-h2
-{
-    color: #2C1C12;
-    font-weight: 600;
+.navbar .container {
+    max-width: 100%;
+    padding-left: 35px;
+    padding-right: 35px;
 }
 
-/* Navigation bar styling matched to the Angular theme. */
-.custom-navbar
-{
-    background-color: #2C1C12 !important;
-    border-bottom: 2px solid #A66A2A;
+.navbar-brand {
+    color: #fff3d6 !important;
+    font-size: 1.25rem;
 }
 
-/* Application title in the navbar. */
-.custom-navbar .navbar-brand
-{
-    color: #F7E7C6 !important;
+.nav-link {
+    color: #ffffff !important;
+    margin-left: 18px;
+    font-size: 0.95rem;
+}
+
+.nav-link:hover {
+    color: #f4b44b !important;
+}
+
+/* Brown buttons used throughout the application */
+.btn-brown {
+    background-color: #2b170f !important;
+    color: #fff3d6 !important;
+    border: 1px solid #2b170f !important;
+    padding: 10px 22px;
     font-weight: bold;
-    margin-right: 25px;
+    border-radius: 6px;
+    text-decoration: none;
 }
 
-/* Navigation links. */
-.custom-navbar .nav-link
-{
-    color: #FFF7E6 !important;
-    margin-right: 12px;
+.btn-brown:hover {
+    background-color: #4a2818 !important;
+    border-color: #4a2818 !important;
+    color: #fff3d6 !important;
 }
 
-/* Navigation link hover color. */
-.custom-navbar .nav-link:hover
-{
-    color: #FFD27D !important;
+/* Home Page */
+.home-page {
+    min-height: calc(100vh - 58px);
+    background-image: url("./assets/the-crown.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-/* Scripture and saved verse cards. */
-.card
-{
-    border: 1px solid #A66A2A;
-    background-color: #FFF7E6;
+.home-overlay {
+    min-height: calc(100vh - 58px);
+    background: linear-gradient(
+        to right,
+        rgba(43, 23, 15, 0.88),
+        rgba(43, 23, 15, 0.35),
+        rgba(43, 23, 15, 0.45)
+    );
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6%;
 }
 
-/* Table header styling. */
-.table thead th
-{
-    background-color: #2C1C12;
-    color: #F7E7C6;
+.home-left {
+    max-width: 520px;
+    color: #ffffff;
+    margin-top: -210px;
 }
 
-/* Table body styling. */
-.table
-{
-    background-color: #FFFDF8;
+.home-left h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff3d6;
+    text-shadow: 3px 3px 6px #000000;
+    margin-bottom: 25px;
 }
 
-/* Form labels. */
-.form-label
-{
-    color: #2C1C12;
-    font-weight: 500;
+.home-left p {
+    font-size: 1.25rem;
+    line-height: 1.6;
 }
 
-/* Primary button styling. */
-.btn-primary
-{
-    background-color: #2C1C12;
-    border-color: #2C1C12;
+.home-verse {
+    max-width: 430px;
+    color: #ffffff;
+    margin-top: 185px;
 }
 
-/* Primary button hover styling. */
-.btn-primary:hover
-{
-    background-color: #A66A2A;
-    border-color: #A66A2A;
+.home-verse h2 {
+    color: #f4b44b;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.verse-text {
+    font-size: 1.25rem;
+    font-style: italic;
+    line-height: 1.7;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.verse-reference {
+    color: #f4b44b;
+    font-weight: bold;
+    margin-top: 20px;
 }

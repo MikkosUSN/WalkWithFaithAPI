@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import devotionImage from "../assets/Gods-Will-Equals-the-Holy-Spirit.webp";
 
 function DevotionPage()
@@ -42,7 +43,7 @@ function DevotionPage()
                 </h3>
 
                 <h4>
-                    Today&apos;s Scripture
+                    Today's Scripture
                 </h4>
 
                 <p
@@ -83,12 +84,45 @@ function DevotionPage()
 
                 <p
                     style={{
-                        fontSize: "18px"
+                        fontSize: "18px",
+                        marginBottom: "30px"
                     }}
                 >
                     Lord, help me slow down, trust Your presence, and walk with
                     peace today. Amen.
                 </p>
+
+                <p
+                    style={{
+                        fontSize: "17px",
+                        lineHeight: "1.7",
+                        marginBottom: "35px",
+                        maxWidth: "620px"
+                    }}
+                >
+                    Spend intentional time with God through daily scripture,
+                    reflection, and prayer. Each devotion becomes a reminder of
+                    His faithfulness and a place to record how He is working in
+                    your life as you continue to grow in your walk with Christ.
+                </p>
+
+                <Link
+                    to="/devotions/list"
+                    style={{
+                        display: "inline-block",
+                        backgroundColor: "#2b170f",
+                        color: "#fff3d6",
+                        textDecoration: "none",
+                        padding: "12px 26px",
+                        borderRadius: "6px",
+                        border: "2px solid #c47a20",
+                        fontWeight: "bold",
+                        fontSize: "16px",
+                        letterSpacing: "0.5px"
+                    }}
+                >
+                    View My Devotions
+                </Link>
 
             </div>
 

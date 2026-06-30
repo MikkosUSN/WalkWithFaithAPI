@@ -3,41 +3,66 @@ import { Request, Response } from "express";
 import
 {
     getAllDevotions,
+    getDevotionById,
     createDevotion,
     updateDevotion,
     deleteDevotion
-}
-from "../dao/DevotionDAO";
+} from "../dao/DevotionDAO";
 
-// Return all devotion entries.
+// Get all devotion entries.
 export const getDevotions = (req: Request, res: Response) =>
 {
-    getAllDevotions((error: any, results: any) =>
+    getAllDevotions((err: any, results: any) =>
     {
-        if (error)
+        if (err)
         {
-            res.status(500).send(error);
+            res.status(500).json({ error: err.message });
+            return;
         }
-        else
-        {
-            res.json(results);
-        }
+
+        res.json(results);
     });
 };
 
-// Create a new devotion entry.
+// Get one devotion entry by ID.
+export const getDevotion = (req: Request, res: Response) =>
+{
+    const id = Number(req.params.id);
+
+    getDevotionById(id, (err: any, results: any) =>
+    {
+        if (err)
+        {
+            res.status(500).json({ error: err.message });
+            return;
+        }
+
+        if (results.length === 0)
+        {
+            res.status(404).json({ message: "Devotion not found." });
+            return;
+        }
+
+        res.json(results[0]);
+    });
+};
+
+// Add a new devotion entry.
 export const addDevotion = (req: Request, res: Response) =>
 {
-    createDevotion(req.body, (error: any, results: any) =>
+    createDevotion(req.body, (err: any, results: any) =>
     {
-        if (error)
+        if (err)
         {
-            res.status(500).send(error);
+            res.status(500).json({ error: err.message });
+            return;
         }
-        else
+
+        res.status(201).json(
         {
-            res.json(results);
-        }
+            message: "Devotion created successfully.",
+            devotionId: results.insertId
+        });
     });
 };
 
@@ -46,22 +71,16 @@ export const editDevotion = (req: Request, res: Response) =>
 {
     const id = Number(req.params.id);
 
-    updateDevotion
-    (
-        id,
-        req.body,
-        (error: any, results: any) =>
+    updateDevotion(id, req.body, (err: any) =>
+    {
+        if (err)
         {
-            if (error)
-            {
-                res.status(500).send(error);
-            }
-            else
-            {
-                res.json(results);
-            }
+            res.status(500).json({ error: err.message });
+            return;
         }
-    );
+
+        res.json({ message: "Devotion updated successfully." });
+    });
 };
 
 // Delete a devotion entry.
@@ -69,15 +88,14 @@ export const removeDevotion = (req: Request, res: Response) =>
 {
     const id = Number(req.params.id);
 
-    deleteDevotion(id, (error: any, results: any) =>
+    deleteDevotion(id, (err: any) =>
     {
-        if (error)
+        if (err)
         {
-            res.status(500).send(error);
+            res.status(500).json({ error: err.message });
+            return;
         }
-        else
-        {
-            res.json(results);
-        }
+
+        res.json({ message: "Devotion deleted successfully." });
     });
 };

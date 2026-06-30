@@ -9,6 +9,23 @@ export const getAllDevotions = (callback: any) =>
     connection.query(sql, callback);
 };
 
+// Get one devotion entry from the database.
+export const getDevotionById =
+(
+    id: number,
+    callback: any
+) =>
+{
+    const sql =
+    `
+        SELECT *
+        FROM Devotion
+        WHERE DevotionID = ?
+    `;
+
+    connection.query(sql, [id], callback);
+};
+
 // Add a new devotion entry into the database.
 export const createDevotion = (devotion: Devotion, callback: any) =>
 {

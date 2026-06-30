@@ -118,7 +118,7 @@ function SavedVersePage()
                 </h2>
 
                 <Link
-                    className="btn btn-primary"
+                    className="btn btn-brown"
                     to="/create"
                 >
                     Add Saved Verse
@@ -126,7 +126,7 @@ function SavedVersePage()
 
             </div>
 
-            <div className="card mb-4">
+            <div className="card mb-4 border-warning-subtle">
 
                 <div className="card-body">
 
@@ -148,7 +148,7 @@ function SavedVersePage()
 
             <table className="table table-bordered table-striped align-middle">
 
-                <thead>
+                <thead className="table-dark">
 
                     <tr>
                         <th>ID</th>

@@ -1,16 +1,20 @@
 {
   "compilerOptions": {
     "target": "ES2020",
-    "module": "CommonJS",
+    "module": "commonjs",
     "rootDir": "./src",
     "outDir": "./dist",
-    "strict": false,
     "esModuleInterop": true,
+    "strict": false,
     "skipLibCheck": true
   },
-    "exclude": [
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
     "node_modules",
     "dist",
-    "walkwithfaithangular"
+    "walkwithfaithangular",
+    "walkwithfaithreact"
   ]
 }

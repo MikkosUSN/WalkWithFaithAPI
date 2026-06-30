@@ -7,6 +7,7 @@ import prayerRoutes from "./routes/PrayerRequestRoutes";
 import devotionRoutes from "./routes/DevotionRoutes";
 import verseRoutes from "./routes/VerseRoutes";
 import savedVerseRoutes from "./routes/SavedVerseRoutes";
+import noteRoutes from "./routes/NoteRoutes";
 
 // Load the settings from the .env file.
 dotenv.config();
@@ -32,8 +33,12 @@ app.use("/api/verses", verseRoutes);
 // Use the saved verse API routes.
 app.use("/api/saved-verses", savedVerseRoutes);
 
+// Use the personal notes API routes.
+app.use("/api/notes", noteRoutes);
+
 // Simple test route to make sure the API is running.
-app.get("/", (req, res) => {
+app.get("/", (req, res) =>
+{
     res.send("Walk with Faith & Grace API is running.");
 });
 
@@ -41,6 +46,7 @@ app.get("/", (req, res) => {
 const PORT = process.env.PORT || 3000;
 
 // Start the server.
-app.listen(PORT, () => {
+app.listen(PORT, () =>
+{
     console.log(`Server is running on port ${PORT}`);
 });

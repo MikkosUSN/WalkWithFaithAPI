@@ -9,6 +9,20 @@ export const getAllVerses = (callback: any) =>
     connection.query(sql, callback);
 };
 
+// Get one random Bible verse for the Verse of the Day feature.
+export const getRandomVerse = (callback: any) =>
+{
+    const sql =
+    `
+        SELECT *
+        FROM BibleVerse
+        ORDER BY RAND()
+        LIMIT 1
+    `;
+
+    connection.query(sql, callback);
+};
+
 // Get all Bible book names.
 export const getBooks = (callback: any) =>
 {

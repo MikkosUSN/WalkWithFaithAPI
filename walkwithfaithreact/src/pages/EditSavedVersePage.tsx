@@ -94,7 +94,7 @@ function EditSavedVersePage()
             {
                 verse &&
                 (
-                    <div className="card mb-4">
+                    <div className="card mb-4 border-warning-subtle">
 
                         <div className="card-body">
 
@@ -112,7 +112,7 @@ function EditSavedVersePage()
                 )
             }
 
-            <div className="card">
+            <div className="card border-warning-subtle">
 
                 <div className="card-body">
 
@@ -166,6 +166,7 @@ function EditSavedVersePage()
 
                             <textarea
                                 className="form-control"
+                                rows={4}
                                 value={personalReflection}
                                 onChange={(e) => setPersonalReflection(e.target.value)}
                             />
@@ -202,17 +203,26 @@ function EditSavedVersePage()
 
                         </div>
 
-                        <div className="d-flex gap-2">
+                        <div className="d-flex align-items-center gap-2">
 
                             <button
                                 type="submit"
-                                className="btn btn-primary"
+                                className="btn-brown"
                             >
                                 Update Verse
                             </button>
 
                             <Link
                                 className="btn btn-secondary"
+                                style={{
+                                    height: "50px",
+                                    minWidth: "90px",
+                                    paddingLeft: "18px",
+                                    paddingRight: "18px",
+                                    display: "inline-flex",
+                                    alignItems: "center",
+                                    justifyContent: "center"
+                                }}
                                 to="/saved-verses"
                             >
                                 Back

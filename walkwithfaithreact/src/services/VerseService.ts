@@ -32,3 +32,9 @@ export const getVerseById =
 {
     return axios.get<Verse>(`${API_URL}/${id}`);
 };
+
+// Get one random Bible verse for the Verse of the Day feature.
+export const getVerseOfTheDay = () =>
+{
+    return axios.get<Verse>(`${API_URL}/verse-of-the-day`);
+};
